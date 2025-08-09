@@ -43,10 +43,10 @@ body {
   /* Fit within viewport: width limited by viewport width and height (1:1 ratio for 5x5) */
   --chrome-vertical: 220px; /* header + status + controls + margins approx */
   width: min(100%, 700px, calc((100vh - var(--chrome-vertical))));
-  aspect-ratio: 1 / 1; /* 5 cols x 5 rows */
+  aspect-ratio: 1 / 1; /* square board */
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   border: 1px solid #2a3340;
   border-radius: 12px;
   overflow: hidden;

@@ -1,8 +1,8 @@
 /* 8x4 Draft Chess – Alternating Placement */
 
 // ---------- Constants ----------
-const ROWS = 5; // rows
-const COLS = 5; // columns
+const ROWS = 6; // rows
+const COLS = 6; // columns
 const START_MS = 90_000; // 1.5 minutes per player
 
 // Piece catalog (same abilities as before)
@@ -503,6 +503,14 @@ function onSquareClick(r, c) {
 
   if (state.phase !== 'play') return;
   const turn = state.activePlayer; const piece = state.board[r][c]; const selected = state.selected?.piece;
+
+  // If clicking the same own piece again, cancel the movement/selection (end highlight)
+  if (selected && selected.owner === turn && r === selected.row && c === selected.col) {
+    state.selected = null;
+    statusEl.textContent = '';
+    renderBoard();
+    return;
+  }
 
   // If an own piece is already selected, attempt action (special or move) BEFORE any preview logic
   if (selected && selected.owner === turn) {

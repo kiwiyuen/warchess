@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>War Chess</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app" id="appRoot">
+      <header class="app-header">
+        <h1>War Chess</h1>
+        <div class="clocks">
+          <div class="clock" id="clockP1">
+            <div class="clock-label">Player 1</div>
+            <div class="clock-time" id="timeP1">01:30.0</div>
+          </div>
+          <div class="clock" id="clockP2">
+            <div class="clock-label">Player 2</div>
+            <div class="clock-time" id="timeP2">01:30.0</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="board-section">
+          <div id="board" class="board" aria-label="Game Board" role="grid"></div>
+          <div id="status" class="status"></div>
+          <div class="controls" id="controls"></div>
+        </section>
+        <aside class="sidebar" id="sidebar"></aside>
+      </main>
+
+      <div class="modal" id="modeModal" role="dialog" aria-modal="true" aria-labelledby="modeTitle">
+        <div class="modal-card">
+          <h2 id="modeTitle">Choose Mode</h2>
+          <div class="modal-actions">
+            <button class="btn primary" id="modeLocal">Local Co‑Op</button>
+            <button class="btn" id="modeVsAi">Vs AI (P2)</button>
+          </div>
+          <div class="modal-options">
+            <label><input type="checkbox" id="randomDraft"> Random Draft (4 pieces per side, random captains)</label>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="log" id="log"></div>
+      </footer>
+    </div>
+
+    <script defer src="./main.js"></script>
+  </body>
+  </html>
+
+
